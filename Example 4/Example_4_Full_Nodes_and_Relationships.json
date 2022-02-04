@@ -1,0 +1,3 @@
+{"type":"node","id":"0","labels":["Action","AtomicAction"],"properties":{"description":"Stop Oven","time":60}}
+{"type":"node","id":"1","labels":["Action","AtomicAction"],"properties":{"description":"Start Oven","time":30}}
+{"id":"0","type":"relationship","label":"IF","properties":{"field":"time","test_node":0,"quantifier":60,"type":"="},"start":{"id":"1","labels":["Action","AtomicAction"]},"end":{"id":"0","labels":["Action","AtomicAction"]}}

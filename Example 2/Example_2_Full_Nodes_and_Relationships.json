@@ -1,0 +1,11 @@
+{"type":"node","id":"0","labels":["Action","AtomicAction"],"properties":{"description":"Melt butter in saucepan over medium heat"}}
+{"type":"node","id":"1","labels":["Action","AtomicAction"],"properties":{"description":"Stir in flour, salt, and pepper until smooth","time":"5 min"}}
+{"type":"node","id":"2","labels":["Action","ParallelAction"],"properties":{"separated_tasks":["Slowly pour milk into butter-flour mixture","Continuously stir"],"description":"Slowly pour milk into butter-flour mixture while continuously stirring until mixture is smooth and bubbling","time":"5 min"}}
+{"type":"node","id":"3","labels":["Action","ConditionalAction"],"properties":{"description":"Use Fire Extinguisher to put out fire","trigger":"Mixture catches on fire"}}
+{"type":"node","id":"4","labels":["Action","SubAction"],"properties":{"larger_goal":"Melt butter in saucepan over medium heat","description":"Turn on Stove"}}
+{"id":"0","type":"relationship","label":"BEFORE","start":{"id":"0","labels":["Action","AtomicAction"]},"end":{"id":"1","labels":["Action","AtomicAction"]}}
+{"id":"1","type":"relationship","label":"AFTER","start":{"id":"1","labels":["Action","AtomicAction"]},"end":{"id":"0","labels":["Action","AtomicAction"]}}
+{"id":"2","type":"relationship","label":"BEFORE","start":{"id":"1","labels":["Action","AtomicAction"]},"end":{"id":"2","labels":["Action","ParallelAction"]}}
+{"id":"3","type":"relationship","label":"AFTER","start":{"id":"2","labels":["Action","ParallelAction"]},"end":{"id":"1","labels":["Action","AtomicAction"]}}
+{"id":"4","type":"relationship","label":"CONDITIONED_AFTER","start":{"id":"3","labels":["Action","ConditionalAction"]},"end":{"id":"2","labels":["Action","ParallelAction"]}}
+{"id":"5","type":"relationship","label":"START","start":{"id":"0","labels":["Action","AtomicAction"]},"end":{"id":"4","labels":["Action","SubAction"]}}

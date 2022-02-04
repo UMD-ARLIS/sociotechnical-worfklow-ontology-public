@@ -1,0 +1,35 @@
+{"type":"node","id":"0","labels":["Action","AtomicAction"],"properties":{"description":"Bring to boil"}}
+{"type":"node","id":"1","labels":["Action","SubAction"],"properties":{"larger_goal":"Melt","description":"Turn on Stove"}}
+{"type":"node","id":"2","labels":["Action","SubAction"],"properties":{"larger_goal":"Stir in seasonings until smooth","description":"Gather seasonings"}}
+{"type":"node","id":"3","labels":["Action","AtomicAction"],"properties":{"description":"Drain"}}
+{"type":"node","id":"4","labels":["Action","AtomicAction"],"properties":{"description":"Fold macaroni into cheese sauce"}}
+{"type":"node","id":"5","labels":["Action","AtomicAction"],"properties":{"temperature":"Medium heat","description":"Melt"}}
+{"type":"node","id":"6","labels":["Action","AtomicAction"],"properties":{"min":5,"description":"Stir in seasonings until smooth"}}
+{"type":"node","id":"7","labels":["Action","AtomicAction"],"properties":{"min":5,"description":"Pour into mixture and stir"}}
+{"type":"node","id":"8","labels":["Action","AtomicAction"],"properties":{"min":3,"description":"Add Cheddar cheese into milk and stir until smooth"}}
+{"type":"node","id":"9","labels":["Activity"],"properties":{"description":"Step 3"}}
+{"type":"node","id":"10","labels":["Activity"],"properties":{"description":"Step 2"}}
+{"type":"node","id":"11","labels":["Activity"],"properties":{"description":"Step 1"}}
+{"type":"node","id":"12","labels":["Action","ParallelAction"],"properties":{"min":8,"separated_tasks":["Cook","Stir Ocassionally"],"description":"Cook and Stir Occassionally"}}
+{"type":"node","id":"13","labels":["Action","AtomicAction"],"properties":{"description":"Enjoy meal"}}
+{"id":"0","type":"relationship","label":"BEFORE","start":{"id":"11","labels":["Activity"]},"end":{"id":"10","labels":["Activity"]}}
+{"id":"1","type":"relationship","label":"BEFORE","start":{"id":"10","labels":["Activity"]},"end":{"id":"9","labels":["Activity"]}}
+{"id":"2","type":"relationship","label":"AFTER","start":{"id":"10","labels":["Activity"]},"end":{"id":"11","labels":["Activity"]}}
+{"id":"3","type":"relationship","label":"AFTER","start":{"id":"9","labels":["Activity"]},"end":{"id":"10","labels":["Activity"]}}
+{"id":"4","type":"relationship","label":"BEFORE","start":{"id":"0","labels":["Action","AtomicAction"]},"end":{"id":"12","labels":["Action","ParallelAction"]}}
+{"id":"5","type":"relationship","label":"AFTER","start":{"id":"12","labels":["Action","ParallelAction"]},"end":{"id":"0","labels":["Action","AtomicAction"]}}
+{"id":"6","type":"relationship","label":"BEFORE","start":{"id":"12","labels":["Action","ParallelAction"]},"end":{"id":"3","labels":["Action","AtomicAction"]}}
+{"id":"7","type":"relationship","label":"AFTER","start":{"id":"3","labels":["Action","AtomicAction"]},"end":{"id":"12","labels":["Action","ParallelAction"]}}
+{"id":"8","type":"relationship","label":"START","start":{"id":"9","labels":["Activity"]},"end":{"id":"4","labels":["Action","AtomicAction"]}}
+{"id":"9","type":"relationship","label":"START","start":{"id":"10","labels":["Activity"]},"end":{"id":"5","labels":["Action","AtomicAction"]}}
+{"id":"10","type":"relationship","label":"BEFORE","start":{"id":"5","labels":["Action","AtomicAction"]},"end":{"id":"6","labels":["Action","AtomicAction"]}}
+{"id":"11","type":"relationship","label":"AFTER","start":{"id":"6","labels":["Action","AtomicAction"]},"end":{"id":"5","labels":["Action","AtomicAction"]}}
+{"id":"12","type":"relationship","label":"BEFORE","start":{"id":"6","labels":["Action","AtomicAction"]},"end":{"id":"7","labels":["Action","AtomicAction"]}}
+{"id":"13","type":"relationship","label":"AFTER","start":{"id":"7","labels":["Action","AtomicAction"]},"end":{"id":"6","labels":["Action","AtomicAction"]}}
+{"id":"14","type":"relationship","label":"BEFORE","start":{"id":"7","labels":["Action","AtomicAction"]},"end":{"id":"8","labels":["Action","AtomicAction"]}}
+{"id":"15","type":"relationship","label":"AFTER","start":{"id":"8","labels":["Action","AtomicAction"]},"end":{"id":"7","labels":["Action","AtomicAction"]}}
+{"id":"16","type":"relationship","label":"START","start":{"id":"11","labels":["Activity"]},"end":{"id":"0","labels":["Action","AtomicAction"]}}
+{"id":"17","type":"relationship","label":"START","start":{"id":"5","labels":["Action","AtomicAction"]},"end":{"id":"1","labels":["Action","SubAction"]}}
+{"id":"18","type":"relationship","label":"START","start":{"id":"6","labels":["Action","AtomicAction"]},"end":{"id":"2","labels":["Action","SubAction"]}}
+{"id":"19","type":"relationship","label":"BEFORE","start":{"id":"4","labels":["Action","AtomicAction"]},"end":{"id":"13","labels":["Action","AtomicAction"]}}
+{"id":"20","type":"relationship","label":"AFTER","start":{"id":"13","labels":["Action","AtomicAction"]},"end":{"id":"4","labels":["Action","AtomicAction"]}}

@@ -1,6 +1,6 @@
 # Neo4J Example 3
 
-This example illustrates the second stage of experimentation with workflow ontologies and knowledge representation. At this point, I began experimenting with types of actions to be carried out and how to best represent them with labels and properties. 
+This example illustrates the third stage of experimentation with workflow ontologies and knowledge representation. At this point, I began using the label categorizations developed in stage 2. This allowed me to experiement with queries in Neo4J and determine how different representations of workflows would affect the ability to perform complex queries.
 
 Attached is an PNG to give a visual of what the json file will appear as when entered into Neo4J. 
 

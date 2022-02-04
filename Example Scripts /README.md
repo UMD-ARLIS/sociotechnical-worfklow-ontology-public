@@ -17,7 +17,7 @@ Example 3 uses the label `SubAction`. Each `SubAction` has a `larger_goal` prope
 
 ### Returning Actions that Follow A Specified Action
 
-The following script is designed to return the nodes of `Actions` and `SubActions`, across encompassing `Activity` nodes following the node with the "Melt" description. This would be used on Example 3. 
+The following script is designed to return the nodes of `Actions` including `SubActions`, across encompassing `Activity` nodes following the node with the "Melt" description. This would be used on Example 3 as it has been tuned to account for the types of relationships used within it. 
 
     Match (start:Action {description: "Melt"})<-[:AFTER*]-(immediate:Action) 
     With immediate 
